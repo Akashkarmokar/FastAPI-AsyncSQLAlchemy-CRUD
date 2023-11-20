@@ -53,10 +53,7 @@ def run_migrations_offline():
         target_metadata=target_metadata,
         literal_binds=True,
         dialect_opts={"paramstyle": "named"},
-        # MATERIALIZED VIEW など無視する場合は下記をクラス属性に設定する
-        # __table_args__ = {"info": {"skip_autogen": True}}
         include_object=include_object,
-        # 型変更を検知する
         compare_type=True,
     )
 
