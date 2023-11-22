@@ -3,10 +3,16 @@ from logging.config import fileConfig
 
 from alembic import context
 
-from app.Core.db import Base, async_engine
+from app.Core.db import async_engine
 
 # Must Import All Of your Models here
-from app.Models.User import User
+from app.Models.Register import Register
+from app.Models.Links import Link
+from app.Models.Tags import Tag
+from app.Models.LinkTags import LinkTag
+from app.Models.Base import Base
+
+
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
