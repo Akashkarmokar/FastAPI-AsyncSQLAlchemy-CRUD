@@ -13,7 +13,7 @@ Project on webscraping on Fastapi backend framework.
 
 ## Roadmap
 
-- Setup Async SQLAlchemy with alembic.[Branch Link](https://github.com/Akashkarmokar/FastAPI-Web-Scrapping/tree/feature/async_sqlalchemy)
+- Setup Async SQLAlchemy with alembic. ( **DONE** )
 - Setup User Authentication System with JWT
 - Dockerize Full Application.
 - Make Link Related API.
