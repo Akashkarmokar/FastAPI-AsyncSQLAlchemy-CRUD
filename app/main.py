@@ -3,6 +3,12 @@ from routes import init_routes
 import uvicorn
 
 app = FastAPI()
+
+@app.get('/')
+async def health_check():
+    return {
+        "message": "Server is started Successfully !!"
+    }
 init_routes(app=app)
 
 
