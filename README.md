@@ -13,13 +13,21 @@ Project on webscraping on Fastapi backend framework.
 
 ## Roadmap
 
-- Setup Async SQLAlchemy with alembic
-- 
-
+- Setup Async SQLAlchemy with alembic.[Branch Link](https://github.com/Akashkarmokar/FastAPI-Web-Scrapping/tree/feature/async_sqlalchemy)
+- Setup User Authentication System with JWT
+- Dockerize Full Application.
+- Make Link Related API.
+- Make Tag Related API.
+- Make API Protection.
 
 ## Installation
 
-- Clone the repo first
+- Clone the repo first.
+  - Use Poetry as python dependency manager.
+
+Step One: (Note: To activate virtual env on VSCODE run 'poetry shell')
+```bash
+  > poetry install
+```
 
 
-    
