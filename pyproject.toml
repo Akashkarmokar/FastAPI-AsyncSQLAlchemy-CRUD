@@ -15,6 +15,7 @@ asyncpg = "^0.29.0"
 python-dotenv = "^1.0.0"
 alembic = "^1.12.1"
 email-validator = "^2.1.0.post1"
+pydantic-settings = "^2.1.0"
 
 
 [build-system]
