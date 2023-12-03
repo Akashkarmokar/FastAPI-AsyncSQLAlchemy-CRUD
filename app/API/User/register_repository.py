@@ -15,11 +15,14 @@ class RegisterRepository:
             return result
 
     async def create_user(self, email: str, password: str):
+
         async with self.async_session.begin() as session:
             new_user = Register(email=email, password=password)
             session.add(new_user)
-            await session.flush()
-
+            await session.commit()
+            user = await self.read_by_id(new_user.id)
+            print("In repo: ", user)
+            return user
 
 
 

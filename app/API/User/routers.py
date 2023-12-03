@@ -3,6 +3,7 @@ from .schemas import Signin, Signup, User
 from app.Core.db import AsyncSession
 from app.Models.Register import Register
 from app.API.User.register_repository import RegisterRepository
+from sqlalchemy import select
 
 UserRouter = APIRouter(tags=['Auth'], prefix='/auth')
 
@@ -26,11 +27,24 @@ async def sign_in(req_body: Signin):
 
 @UserRouter.post('/signup')
 async def sign_up(req_body: Signup, session: AsyncSession):
+    # async with session.begin() as session:
+    #     new_user = Register(email=req_body.email, password=req_body.password)
+    #     session.add(new_user)
+    #     await session.flush()
+    #
+    #     stmt = select(Register).where(Register.id == new_user.id)
+    #     result = await session.scalar(stmt)
+    #
+    #     return User.model_validate(result)
     user_repository = RegisterRepository(session=session)
     created_user = await user_repository.create_user(email=req_body.email, password=req_body.password)
-    ok = created_user
-    return f'{created_user.id}'
-    return "Created Successfully !!"
+    print("From route: ", created_user)
+    return "h"
+
+
+
+
+
 
 
 @UserRouter.get('/user/{user_id}')

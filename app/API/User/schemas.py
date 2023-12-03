@@ -13,8 +13,11 @@ class Signup(BaseModel):
     password: str
 
 
-class User(BaseModel):
+class BaseResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True, arbitrary_types_allowed=True)
+
+
+class User(BaseResponse):
     id: int
     email: str
 
-    model_config = ConfigDict(from_attributes=True)
